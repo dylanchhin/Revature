@@ -1,0 +1,32 @@
+
+U	java:S106A"9Replace this use of System.out or System.err by a logger.(ò»ñÿ8ÀŒé©¢.
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(¦âõú
+f
+java:S1989V"PHandle the following exception that could be thrown by "getWriter": IOException.(¾šçÞ
+S	java:S106("9Replace this use of System.out or System.err by a logger.(¤¯ÑÓÿÿÿÿÿ
+g
+java:S1192A"JDefine a constant instead of duplicating this literal "accountid" 3 times.(ò»ñÿ8ÀŒé©¢.
+G
+java:S1128",Remove this unused import 'bank.model.User'.(È´Â¤ýÿÿÿÿ
+s
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(©©…íúÿÿÿÿ
+d
+java:S1192A"GDefine a constant instead of duplicating this literal "amount" 3 times.(ò»ñÿ8ÀŒé©¢.
+J
+java:S1128"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ
+—
+java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Â·Š
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ë½Û]
+R
+java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼
+L
+java:S1128"6Remove this unused import 'javax.servlet.http.Cookie'.(«Þªü
+f
+java:S1989\"PHandle the following exception that could be thrown by "getWriter": IOException.(¾šçÞ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(àóÿØþÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üþÿÿÿÿ
+V	java:S125_"<This block of commented-out lines of code should be removed.(óÔ±âûÿÿÿÿ
+c
+java:S1192A"FDefine a constant instead of duplicating this literal "email" 3 times.(ò»ñÿ8ÀŒé©¢.

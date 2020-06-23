@@ -1,0 +1,51 @@
+
+{	java:S116"aRename this field "FIRST_NAME_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºµñÑüÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(®ìôï
+<
+java:S1170"!Make this final field static too.(éñ£Øýÿÿÿÿ
+b
+java:S1192E"GDefine a constant instead of duplicating this literal " FROM " 4 times.(ƒ¾¾üÿÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(ºµñÑüÿÿÿÿ
+z	java:S116"`Rename this field "LAST_NAME_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éñ£Øýÿÿÿÿ
+]
+java:S2095n"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+<
+java:S1170"!Make this final field static too.(Þû«”üÿÿÿÿ
+v	java:S116"\Rename this field "EMAIL_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÅÌ®ûÿÿÿÿ
+f
+java:S2095´"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+~	java:S116"iRename this field "USER_TABLE_ROLE_ID_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ¿Æ
+ƒ	java:S116"iRename this field "ROLE_TABLE_ROLE_ID_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÝØÓ‹ýÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(Þ¿Æ
+t	java:S116"ZRename this field "USER_TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÎ×§ýÿÿÿÿ
+y	java:S116"_Rename this field "PASSWORD_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßˆ—„úÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(ÝØÓ‹ýÿÿÿÿ
+x	java:S116"cRename this field "PHONE_NUMBER_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ìôï
+<
+java:S1170"!Make this final field static too.(ÕÎ×§ýÿÿÿÿ
+z	java:S116"`Rename this field "ROLE_NAME_COLUMN_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó“œýÿÿÿÿ
+c
+java:S1192E"HDefine a constant instead of duplicating this literal " WHERE " 3 times.(ƒ¾¾üÿÿÿÿÿ
+c
+java:S1192«"GDefine a constant instead of duplicating this literal " = ?, " 5 times.(ô½œˆþÿÿÿÿ
+^
+java:S2095‡"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+t	java:S116"ZRename this field "ROLE_TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þû«”üÿÿÿÿ
+e
+java:S2095m"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+<
+java:S1170"!Make this final field static too.(ßˆ—„úÿÿÿÿ
+f
+java:S2095…"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+e
+java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ
+<
+java:S1170"!Make this final field static too.(¤ÅÌ®ûÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(Ó“œýÿÿÿÿ
+f
+java:S2095—"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ø·“ÿ

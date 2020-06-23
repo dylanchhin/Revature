@@ -1,0 +1,13 @@
+
+d
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÅÜ
+j
+java:S2095o"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+]
+java:S2095q"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+j
+java:S2095F"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+]
+java:S2095G"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+†
+java:S1319h"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Œññı

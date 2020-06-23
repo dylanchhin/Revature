@@ -1,0 +1,35 @@
+
+j
+java:S2095]"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+d
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÅÜ
+T
+java:S1117²"=Rename "connection" which hides the field declared at line 8.(ïÆ¥
+c
+java:S1192"MDefine a constant instead of duplicating this literal "bankaccounts" 3 times.(ûø¬Š
+]
+java:S2095_"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+]
+java:S2095<"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(„‡–
+J
+java:S1481·".Remove this unused "savepoint" local variable.(™«ˆ‚şÿÿÿÿ
+S
+java:S1117"=Rename "connection" which hides the field declared at line 8.(ïÆ¥
+k
+java:S2095˜"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â½«ûÿÿÿÿ
+k
+java:S2095€"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+S
+java:S11174"=Rename "connection" which hides the field declared at line 8.(ïÆ¥
+S
+java:S1117|"=Rename "connection" which hides the field declared at line 8.(ïÆ¥
+T
+java:S1117’"=Rename "connection" which hides the field declared at line 8.(ïÆ¥
+j
+java:S2095;"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+D
+java:S1068".Remove this unused "connection" private field.(éä´É
+k
+java:S2095»"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â½«ûÿÿÿÿ
+S
+java:S1117V"=Rename "connection" which hides the field declared at line 8.(ïÆ¥

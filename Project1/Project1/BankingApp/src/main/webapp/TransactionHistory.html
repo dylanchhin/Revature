@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TransactionHistory</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="customerMainPage.html">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Transfer.html">Transfer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="TransactionHistory.html">Transactions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <p>Transaction History</p>
+            <form id="transaction" action="transaction" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="accountid4">AccountID</label>
+                    <input type="accountid4" class="form-control" id="accountid4" name="accountid" placeholder="Account ID">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="successmessage4" name="successmessage"></p>
+            </form>
+        </div>
+    </div>
+</div>
+<table id="table">
+</table>
+</body>
+
+</html>
+<script>
+let transactions = [{"Date": "Recent Date", "PreviousBalance": "Previous Balance", "Description": "Transaction", "Amount": "Transaction Amount"}];
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+var frm = $('#transaction');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                transactions = [{"Date": " ", "PreviousBalance": " ", "Description": " ", "Amount": " "}];
+               $.each(JSON.parse(data), function(key, value) {
+                   transactions.push({"Date" : JSON.stringify(value.timeOfTransaction), "PreviousBalance" : JSON.stringify(value.previousBalance), "Description" : JSON.stringify(value.description), "Amount" : JSON.stringify(value.transactionAmount)});
+                });
+                let table = document.getElementById("table");
+                let xar = Object.keys(transactions[0]);
+                generateTableHead(table, xar);
+                generateTable(table, transactions);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+</script>

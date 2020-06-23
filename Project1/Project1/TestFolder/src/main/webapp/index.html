@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Form</title>
+</head>
+<body>
+<form action="myservlet" method="get" enctype="multipart/form-data">
+    User Name: <input type="text" name="realname">
+    Password: <input type="password" name="mypassword">
+    <input type="submit" value="Identification">
+</form>
+<script>
+  document.querySelector('#submit').addEventListener('click', (e) => {
+    e.preventDefault();
+    let inpt = document.querySelector('#myname');
+    let name = inpt.value;
+    if(name.length == 0) {
+      return;
+    } else {
+
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw/Transfer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="TellerMainPage.html">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="TellerActions.html">Deposit/Withdraw</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="TellerTransactionHistory.html">Transaction History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p>Deposit</p>
+                <form id="depositForm" action="bank" method="post" enctype="x-www-form-urlencoded">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="amount" class="form-control" id="amount" name="amount"  placeholder="Enter Amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountid">AccountID</label>
+                        <input type="accountid" class="form-control" id="accountid" name="accountid" placeholder="ACCOUNTID">
+                    </div>
+                    <input type="hidden" id="action" name="action" value="deposit">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p>Withdraw</p>
+            <form id="withdrawForm" action="bank" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email2" class="form-control" id="email2" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="amount2" class="form-control" id="amount2" name="amount" placeholder="Enter Amount">
+                </div>
+                <div class="form-group">
+                    <label for="accountid">AccountID</label>
+                    <input type="accountid" class="form-control" id="accountid2" name="accountid" placeholder="ACCOUNTID">
+                </div>
+                <input type="hidden" id="action2" name="action" value="withdraw">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="successmessage2" name="successmessage"></p>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var frm = $('#depositForm');
+
+frm.submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: frm.attr('method'),
+        url: frm.attr('action'),
+        data: frm.serialize(),
+        success: function (data) {
+            console.log('Submission was successful.');
+            alert(data);
+        },
+        error: function (data) {
+            console.log('An error occurred.');
+            console.log(data);
+        },
+    });
+});
+var frm2 = $('#withdrawForm');
+    frm2.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm2.attr('method'),
+            url: frm2.attr('action'),
+            data: frm2.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                alert(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+</script>

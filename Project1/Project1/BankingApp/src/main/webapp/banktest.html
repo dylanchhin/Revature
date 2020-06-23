@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<p>Banking</p>
+<!--  <button onclick="bank()">Click me</button> -->
+<!-- <button onclick="tryMe('hello')">Click me</button> -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <p>Deposit</p>
+            <form id="depositForm" action="bank" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="amount" class="form-control" id="amount" name="amount"  placeholder="Enter Amount">
+                </div>
+                <div class="form-group">
+                    <label for="accountid">AccountID</label>
+                    <input type="accountid" class="form-control" id="accountid" name="accountid" placeholder="ACCOUNTID">
+                </div>
+                <input type="hidden" id="action" name="action" value="deposit">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <p id="successmessage" name="successmessage"></p>
+        </div>
+        <div class="col-sm">
+            <p>Withdraw</p>
+            <form id="withdrawForm" action="bank" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email2" class="form-control" id="email2" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="amount2" class="form-control" id="amount2" name="amount" placeholder="Enter Amount">
+                </div>
+                <div class="form-group">
+                    <label for="accountid">AccountID</label>
+                    <input type="accountid" class="form-control" id="accountid2" name="accountid" placeholder="ACCOUNTID">
+                </div>
+                <input type="hidden" id="action2" name="action" value="withdraw">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="successmessage2" name="successmessage"></p>
+            </form>
+        </div>
+        <div class="col-sm">
+            <p>Transfer</p>
+            <form id="transfer" action="transfer" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="accountid">AccountID</label>
+                    <input type="accountid" class="form-control" id="accountid3" name="accountid" placeholder="Account ID">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="amount" class="form-control" id="amount3" name="amount" placeholder="Enter Amount">
+                </div>
+                <div class="form-group">
+                    <label for="otherAccountID">Other Account</label>
+                    <input type="otherAccountID" class="form-control" id="otherAccountID" name="otherAccountID" placeholder="ACCOUNTID">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="successmessage3" name="successmessage"></p>
+            </form>
+        </div>
+        <div class="col-sm">
+            <p>Transfer</p>
+            <form id="transaction" action="transaction" method="post" enctype="x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="accountid">AccountID</label>
+                    <input type="accountid" class="form-control" id="accountid4" name="accountid" placeholder="Account ID">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="successmessage4" name="successmessage"></p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+function bank(){
+    $.getJSON("/bank", function(data) {
+      //iterating over each value that the servlet returns
+      $.each(data, function(key, value) {
+               alert(value.Name); //alerting the values set in the JSONObject of the Sevlet.
+               alert(value.State);
+     });
+});
+}
+function tryMe(arg) {
+    document.write(arg);
+}
+var frm = $('#depositForm');
+
+    frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                alert(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+var frm = $('#withdrawForm');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                alert(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+var frm = $('#transfer');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                alert(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+var frm = $('#transaction');
+    frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+               $.each(JSON.parse(data), function(key, value) {
+                alert(value.timeOfTransaction); //alerting the values set in the JSONObject of the Sevlet.
+                });
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+</script>

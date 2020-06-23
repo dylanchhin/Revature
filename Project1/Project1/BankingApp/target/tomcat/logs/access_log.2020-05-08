@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [08/May/2020:06:43:53 -0700] "POST /login HTTP/1.1" 302 - http-bio-8080-exec-1 2993
+0:0:0:0:0:0:0:1 - - [08/May/2020:06:43:53 -0700] "GET /AdminMainPage.html HTTP/1.1" 200 3029 http-bio-8080-exec-3 11
+0:0:0:0:0:0:0:1 - - [08/May/2020:06:43:55 -0700] "GET /profile HTTP/1.1" 200 113 http-bio-8080-exec-4 1432
+0:0:0:0:0:0:0:1 - - [08/May/2020:06:43:59 -0700] "GET /ViewCustomers.html HTTP/1.1" 200 3367 http-bio-8080-exec-5 10
+0:0:0:0:0:0:0:1 - - [08/May/2020:06:44:02 -0700] "GET /user HTTP/1.1" 200 1163 http-bio-8080-exec-6 1356

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="AdminMainPage.html">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="CreateUser.html">Create</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="UpdateUser.html">Update</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="DeleteUser.html">Delete</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ViewCustomers.html">View Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<button onclick="userTable()">See Table</button>
+<table>
+</table>
+</body>
+</html>
+<script>
+let users = [{"Email": "A", "First Name": "B", "Last Name": "C", "Phone Number": "D", "Password": "E", "Roleid": "F"}];
+function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+    }
+}
+function generateTable(table, data) {
+    for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+        let cell = row.insertCell();
+        let text = document.createTextNode(element[key]);
+        cell.appendChild(text);
+    }
+    }
+}
+function userTable(){
+    $.getJSON("/user", function(data) {
+    //iterating over each value that the servlet returns
+        users = [{"Email": "Email", "First Name": "First Name", "Last Name": "Last Name", "Phone Number": "Phone Number", "Password": "Password", "Role": "Role"}];
+        $.each(data, function(key, value) {
+            users.push({"Email": JSON.stringify(value.email), "First Name": JSON.stringify(value.firstName), "Last Name": JSON.stringify(value.lastName), "Phone Number": JSON.stringify(value.phoneNumber), "Password": JSON.stringify(value.password), "Role": JSON.stringify(value.role) });  
+            });
+        let table = document.querySelector("table");
+        let xar = Object.keys(users[0]);
+        generateTable(table, users);
+        generateTableHead(users, xar);
+});
+}
+</script>

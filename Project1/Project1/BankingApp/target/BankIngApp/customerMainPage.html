@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body onload="profile();">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="customerMainPage.html">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Transfer.html">Transfer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="TransactionHistory.html">Transaction History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h4 class="card-title">Profile</h4>
+            <h5 class="card-title">First Name</h5>
+            <p class="card-text" id="firstname"></p>
+            <h5 class="card-title">Last Name</h5>
+            <p class="card-text" id="lastname"></p>
+            <h5 class="card-title">Phone</h5>
+            <h5 class="card-title">Phone Number</h5>
+            <p class="card-text" id="phone"></p>
+            <h5 class="card-title">Email</h5>
+            <p class="card-text" id="email"></p>
+            <h5 class="card-title">Account IDs</h5>
+            <p class="card-text" id="accounts"></p>
+            <h5 class="card-title">Account Balances</h5>
+            <p class="card-text" id="balance"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var accountid = [];
+var accountBalance = [];
+function profile(){
+    $.getJSON("/profile", function(data) {
+    //iterating over each value that the servlet returns
+        $.each(data, function(key, value) {
+            document.getElementById("firstname").innerHTML = value.firstname;
+            document.getElementById("lastname").innerHTML = value.lastname;
+            document.getElementById("email").innerHTML = value.email;
+            document.getElementById("phone").innerHTML = value.phone;
+            $.each(value.account, function(key, value) {
+                accountid.push(value);
+            })
+            $.each(value.balance, function(key, value) {
+                accountBalance.push(value);
+            })
+            document.getElementById("accounts").innerHTML = accountid;
+            document.getElementById("balance").innerHTML = accountBalance;
+        });
+    });
+}
+</script>

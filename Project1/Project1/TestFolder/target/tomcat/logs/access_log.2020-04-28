@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [28/Apr/2020:11:00:25 -0700] "GET / HTTP/1.1" 304 - http-bio-8888-exec-2 87
+0:0:0:0:0:0:0:1 - - [28/Apr/2020:11:00:29 -0700] "GET /myservlet?realname=Hello&mypassword= HTTP/1.1" 200 304 http-bio-8888-exec-3 13
+0:0:0:0:0:0:0:1 - - [28/Apr/2020:11:12:38 -0700] "GET / HTTP/1.1" 304 - http-bio-8888-exec-5 36
+0:0:0:0:0:0:0:1 - - [28/Apr/2020:11:13:05 -0700] "GET /myservlet?realname=dylan&mypassword=chhin HTTP/1.1" 200 309 http-bio-8888-exec-7 4

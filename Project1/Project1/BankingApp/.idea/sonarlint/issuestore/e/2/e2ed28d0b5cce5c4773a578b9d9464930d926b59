@@ -1,0 +1,21 @@
+
+]
+java:S1126Â"AReplace this if-then-else statement by a single return statement.(»£›Èüÿÿÿÿ
+{
+java:S1488¦"dImmediately return this expression instead of assigning it to the temporary variable "transactions".(Â³¬ş
+s
+java:S1488Ğ"]Immediately return this expression instead of assigning it to the temporary variable "pairs".(îº›O
+‡
+java:S1319 "pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(«œ–Û
+j
+java:S1192,"ODefine a constant instead of duplicating this literal "Invalid Amount" 3 times.(İĞØ‡ıÿÿÿÿ
+
+java:S11922"rDefine a constant instead of duplicating this literal "User did not have access or account did not exist" 5 times.(ÚÏÇÈüÿÿÿÿ
+{
+java:S1488Û"dImmediately return this expression instead of assigning it to the temporary variable "transactions".(Â³¬ş
+Œ
+java:S1319Ù"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ùÂÇ°úÿÿÿÿ
+7
+java:S1116"Remove this empty statement.(ôŸìúÿÿÿÿ
+A
+java:S5411"*Use the primitive boolean expression here.(Ê¤€×
